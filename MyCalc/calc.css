@@ -1,0 +1,382 @@
+body {
+	margin: 0px 0px 0px 0px;
+}
+
+#container {
+	width: 400px;
+	height: 712px;
+	padding: 0px;
+	margin: auto;
+}
+
+#top {
+	width: 400px;
+	height: 60px;
+	display: inline-flex;
+	background-color: #666666;
+}
+
+#title {
+	width: 220px;
+	padding: 8px 25px 8px 25px;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	font-size: 30px;
+	text-transform: uppercase;
+	color: #f0f0f0;
+	font-weight: bold;
+	letter-spacing: .1em;
+	cursor: default;
+}
+
+.extra_btn {
+	width: 60px;
+	border: 1px solid #929292;
+	color: #f0f0f0;
+	background-color: #888;
+	cursor: pointer;
+}
+
+#question {
+	font-size: 50px;
+	margin-top: -8px;
+	padding-left: 19px;
+}
+
+#graph {
+	font-size: 20px;
+	font-family: "Avant Garde";
+	margin-top: 0px;
+	padding: 12px 5px 0px 5px;
+}
+
+#calculator {
+	font-size: 0;
+	background-color: #fffbb3;
+	border-left: 1px solid #929292;
+	border-bottom: 1px solid #929292;
+	border-right: 1px solid #929292;
+	padding: 13px;
+	margin: auto;
+	display: block;
+}
+
+#graph_area {
+	font-size: 0;
+	background-color: white;
+	border-left: 1px solid #929292;
+	border-bottom: 1px solid #929292;
+	border-right: 1px solid #929292;
+	margin: auto;
+	height: 651px;
+	display: none;
+}
+
+#help {
+	background-color: #fffbb3;
+	border-left: 1px solid #929292;
+	border-bottom: 1px solid #929292;
+	border-right: 1px solid #929292;
+	padding: 13px;
+	height: 626px;
+	margin: auto;
+	display: none;
+	overflow-y: auto;
+}
+
+.help_btn {
+	color: #404040;
+	background-color: #7bf1a0;
+	border: 1px solid rgb(0, 132, 75);
+	display: inline-block;
+	border-radius: 4px;
+	cursor: pointer;
+	font: bold 18px sans-serif;
+	margin-bottom: 10px;
+	padding: 0px 5px 10px 5px;
+}
+
+.hidebtn {
+	display: none;
+	border: 1px solid rgb(69, 69, 69)
+
+}
+
+#btn_container {
+	width: 400px;
+	height: 115px;
+	display: inline-flex;
+	border-bottom: 1px solid #929292;
+}
+
+#func_button {
+	width: 192px;
+	height: 115px;
+	padding-left: 5px;
+	border-right: 1px solid #929292;
+}
+
+#show_list {
+	width: 200px;
+	height: 115px;
+	padding: 5px;
+}
+
+#func_list {
+	width: -webkit-fill-available;
+	height: 100px;
+	font: 16px -webkit-body;
+	resize: none;
+}
+
+#draw {
+	position: absolute;
+	width: 50px;
+	height: 20px;
+	color: #000000b8;
+	background-color: lightskyblue;
+	border-radius: 0px;
+	display: inline-flex;
+	margin: 3px 5px 5px 0px;
+	margin-left: 340px;
+	vertical-align: middle;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 0px 5px 0px;
+	cursor: pointer;
+	box-shadow: 0 3px 0 #a1a1a1, 0 2px 5px rgba(0, 0, 0, .75);
+	font: 14px "굴림";
+	font-weight: bold;
+	z-index: 2;
+}
+
+#domain{
+	font-size: 18px;
+	width: 290px;
+	height: 22px;
+	position: absolute;
+	padding: 5px;
+	margin-left: 50px;
+	margin-top: -50px;
+	z-index: 2;
+	display: block;
+}
+
+.range{
+	width: 60px;
+	font-size: 18px;
+}
+
+#input_area #input {
+	width: -webkit-fill-available;
+	height: 90px;
+	padding: 5px 10px 5px 10px;
+	background-color: #c8d6c7;
+	border-radius: 8px 8px 0px 0px;
+	overflow-y: auto;
+	box-shadow: inset 0 0px 3px;
+	font: 20px digital;
+	margin-bottom: -2px;
+	resize: none;
+	cursor: default;
+}
+
+#result_area #result {
+	width: -webkit-fill-available;
+	height: 90px;
+	margin-bottom: 15px;
+	padding: 5px 10px 5px 10px;
+	background-color: #c8d6c7;
+	border-radius: 0px 0px 8px 8px;
+	overflow-y: auto;
+	box-shadow: inset 0 0px 3px;
+	font: 20px digital;
+	resize: none;
+	cursor: default;
+}
+
+.key {
+	width: 56.5px;
+	height: 30px;
+	color: #e8e8e8;
+	background-color: #b276e0;
+	display: inline-flex;
+	margin: 3px 5px 8px 0px;
+	vertical-align: middle;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 0px 5px 0px;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0 3px 0 #a1a1a1, 0 2px 5px rgba(0, 0, 0, .75);
+	font: bold 20px sans-serif;
+	position: static;
+	z-index: 1;
+}
+
+.func_key {
+	width: 42px;
+	height: 20px;
+	background-color: #a1a1a1;
+	color: black;
+	cursor: default;
+	display: inline-flex;
+	margin: 3px 5px 5px 0px;
+	vertical-align: middle;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 0px 5px 0px;
+	border-radius: 4px;
+	box-shadow: 0 3px 0 #a1a1a1, 0 2px 5px rgba(0, 0, 0, .75);
+	font: 14px "굴림";
+	font-weight: bold;
+	position: static;
+	z-index: 1;
+}
+
+.direct-key {
+	background-color: #808080;
+}
+
+.hideBtn {
+	display: none;
+	width: 185px;
+	background-color: #f0f0f0;
+	padding-left: 5px;
+	border-radius: 5px;
+	border: 1.5px solid #5d8c7f;
+	position: absolute;
+	z-index: 2;
+}
+
+.hideBtn span {
+	color: #000000b8;
+	background-color: #76e0c3;
+}
+
+.folder {
+	font: 13px "굴림";
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #ff6363;
+}
+
+#TriFunc { width: 204px; height: 101px; margin-left: -1px; overflow-y: auto; }
+#VecMat { width: 246px; margin-left: 58px;}
+#Statistics {width: 204px; height: 101px; margin-left: 121px; overflow-y: auto; }
+#Percent { margin-left: 181px; }
+#Func { width: 204px; height: 101px; margin-left: -1px; overflow-y: auto; }
+#Var { width: 204px; height: 101px; margin-left: 58px; overflow-y: auto; }
+#LogicOp { margin-left: 121px; }
+#BitOp { margin-left: 181px; }
+
+.number {
+	width: 68.5px;
+	color: #242424;
+	background-color: #f5f5f5;
+}
+
+.shifting {
+	color: #242424;
+	font-size: 20px;
+	background-color: #f5f5f5;
+}
+
+.operator {
+	width: 68.5px;
+	background-color: #4c4041;
+}
+
+.shift {
+	background-color: #003dcce3;
+	font-size: 16px;
+}
+
+.alpha {
+	background-color: #004fe3a8;
+	font-size: 15px;
+}
+
+.clicked {
+	background-color: #f2f600;
+	color: gray;
+}
+
+.copy {
+	background-color: #22db00;
+	font-size: 16px;
+}
+
+.paste {
+	background-color: #509700e3;
+	font-size: 16px;
+}
+
+#delete-key {
+	width: 68.5px;
+	background-color: red;
+	color: white;
+}
+
+.symbol-key {
+	font: 20px ""
+}
+
+.function-key {
+	font: 14px "굴림";
+	font-weight: bold;
+}
+
+.normal {
+	font-weight: normal;
+	font-size: 18px;
+}
+
+.eval-key {
+	width: 68.5px;
+	background-color: #ec6500;
+	color: white;
+}
+
+#clear-key {
+	width: 68.5px;
+	background-color: #fa9112;
+	color: white;
+}
+
+.key:active {
+	background-color: #a1a1a1;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.func_key_available:active {
+	background-color: #a1a1a1;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+#draw:active {
+	background-color: #a1a1a1;
+	transform: translateY(4px);
+}
+
+.func_key_available {
+	color: #000000b8;
+	background-color: moccasin;
+	cursor: pointer;
+}
+
+.func_key_clicked {
+	background-color: #f2f600;
+	color: black;
+}
+
+.help_btn:active{
+	background-color: #a1a1a1;
+	transform: translateY(2px);
+}
+
+a:visited {
+	color: blue; 
+	text-decoration: underline;
+}

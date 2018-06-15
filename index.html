@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Calculator</title>
+	<link rel='stylesheet' href='./MyCalc/calc.css' type='text/css'>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' type='text/javascript'></script>
+	<script src='./MyCalc/plotly.js' type='text/javascript'></script>
+	<script src='./MyCalc/math.js' type='text/javascript'></script>
+	<script src='./MyCalc/calc.js' type='text/javascript'></script>
+</head>
+<body>        
+	<div id="container">
+		<div id="top">
+			<span id="question" class="extra_btn">?</span>
+			<span id="title">Calculator</span>
+			<span id="graph" class="extra_btn">graph</span>
+		</div>
+		<div id="help">
+			<span class="help_btn">calculator</span>
+			<span class="help_btn">graph</span>
+			<span class="help_btn">folder</span>
+			<span class="help_btn">undo/redo</span>
+			<span class="help_btn">copy/paste</span>
+			<span class="help_btn">shift/alpha</span>
+			<span class="help_btn">
+				<a href="https://youtu.be/3j2YKiefaVM">demon</a></span>
+			<div id="calc_help" class="hidebtn">
+				<img src="./Img/right.png" alt="help-image" style="width: 100%">
+				<img src="./Img/left.png" alt="help-image" style="width: 100%">
+			</div>
+			<div id="graph_help" class="hidebtn">
+					<img src="./Img/graph1.png" alt="help-image" style="width: 100%">
+					<img src="./Img/graph2.png" alt="help-image" style="width: 100%">
+			</div>
+			<div id="folder_help" class="hidebtn">
+				<img src="./Img/folder1.png" alt="help-image" style="width: 100%">
+				<img src="./Img/folder2.png" alt="help-image" style="width: 100%">
+				<img src="./Img/folder3.png" alt="help-image" style="width: 100%">
+				<img src="./Img/folder4.png" alt="help-image" style="width: 100%">
+			</div>
+			<div id="undo_help" class="hidebtn">
+				<img src="./Img/undo.png" alt="help-image" style="width: 100%">
+			</div>
+			<div id="copy_help" class="hidebtn">
+					<img src="./Img/copy1.png" alt="help-image" style="width: 100%">
+					<img src="./Img/copy2.png" alt="help-image" style="width: 100%">
+			</div>
+			<div id="shift_help" class="hidebtn">
+				<img src="./Img/shift_alpha.png" alt="help-image" style="width: 100%">
+			</div>
+		</div>
+		<div id="graph_area">
+			<div id="btn_container">
+				<div id="func_button">
+					<span class="func_key">f</span>
+					<span class="func_key">g</span>
+					<span class="func_key">h</span>
+					<span class="func_key">f2</span>
+					<span class="func_key">g2</span>
+					<span class="func_key">h2</span>
+					<span class="func_key">f3</span>
+					<span class="func_key">g3</span>
+					<span class="func_key">h3</span>
+					<span class="func_key">f4</span>
+					<span class="func_key">g4</span>
+					<span class="func_key">h4</span>
+				</div>
+				<div id="show_list">
+					<textarea id="func_list" class='display' type="text" autocomplete="off" 
+					spellcheck="false" readonly="true"></textarea>
+				</div>
+			</div>
+			<span id="draw">Draw</span>
+			<div id="plot"></div>
+			<div id="domain">
+				Domain range:
+				<input id="min" class="range" type="number" value="-10"/>
+				 ~ 
+				<input id="max" class="range" type="number" value="10"/>
+			</div>
+		</div>
+		<div id="calculator">
+			<div id="input_area">
+				<textarea id="input" class='display' type="text" autocomplete="off" 
+				spellcheck="false" readonly="true"></textarea>
+			</div>
+			<div id="result_area">
+				<textarea id="result" class='display' type="text" autocomplete="off" 
+				spellcheck="false" readonly="true"></textarea>
+			</div>
+			<div style="padding-left: 3px">
+				<span class="key folder">삼각</span>
+				<div id="TriFunc" class="hideBtn">
+					<span class="key function-key paren">sin</span>
+					<span class="key function-key paren">cos</span>
+					<span class="key function-key paren">tan</span>
+					<span class="key function-key paren">csc</span>
+					<span class="key function-key paren">sec</span>
+					<span class="key function-key paren">cot</span>
+					<span class="key function-key paren">sinh</span>
+					<span class="key function-key paren">cosh</span>
+					<span class="key function-key paren">tanh</span>
+					<span class="key function-key paren">asin</span>
+					<span class="key function-key paren">acos</span>
+					<span class="key function-key paren">atan</span>
+					<span class="key function-key paren">csch</span>
+					<span class="key function-key paren">sech</span>
+					<span class="key function-key paren">coth</span>
+					<span class="key function-key paren">acsc</span>
+					<span class="key function-key paren">asec</span>
+					<span class="key function-key paren">acot</span>
+					<span class="key function-key paren">asinh</span>
+					<span class="key function-key paren">acosh</span>
+					<span class="key function-key paren">atanh</span>
+					<span class="key function-key paren">acsch</span>
+					<span class="key function-key paren">asech</span>
+					<span class="key function-key paren">acoth</span>
+				</div>
+				<span class="key folder">벡터행렬</span>
+				<div id="VecMat" class="hideBtn">
+					<span class="key function-key paren">dot</span>
+					<span class="key function-key paren">cross</span>
+					<span class="key function-key paren">norm</span>
+					<span class="key function-key paren">flatten</span>
+					<span class="key function-key paren">det</span>
+					<span class="key function-key">trans</span>
+					<span class="key function-key paren">inv</span>
+				</div>
+				<span class="key folder">통계</span>
+				<div id="Statistics" class="hideBtn">
+					<span class="key function-key paren">mean</span>
+					<span class="key function-key paren">var</span>
+					<span class="key function-key paren">std</span>
+					<span class="key function-key paren">max</span>
+					<span class="key function-key paren">min</span>
+					<span class="key function-key paren">sum</span>
+					<span class="key function-key paren">median</span>
+					<span class="key function-key paren">mode</span>
+					<span class="key function-key paren">prod</span>
+				</div>
+				<span class="key folder">확률</span>
+				<div id="Percent" class="hideBtn">
+					<span class="key function-key">nPr</span>
+					<span class="key function-key">nCr</span>
+					<span class="key function-key semi-operator">n!</span>
+					<span class="key function-key paren">gcd</span>
+					<span class="key function-key paren">lcm</span>
+				</div>
+				<span class="key copy">COPY</span>
+				<span class="key paste">PASTE</span>
+				<span class="key folder">함수</span>
+				<div id="Func" class="hideBtn">
+					<span class="key function-key paren">f</span>
+					<span class="key function-key paren">g</span>
+					<span class="key function-key paren">h</span>
+					<span class="key function-key paren">f2</span>
+					<span class="key function-key paren">g2</span>
+					<span class="key function-key paren">h2</span>
+					<span class="key function-key paren">f3</span>
+					<span class="key function-key paren">g3</span>
+					<span class="key function-key paren">h3</span>
+					<span class="key function-key paren">f4</span>
+					<span class="key function-key paren">g4</span>
+					<span class="key function-key paren">h4</span>
+				</div>
+				<span class="key folder">변수</span>
+				<div id="Var" class="hideBtn">
+					<span class="key function-key">x</span>
+					<span class="key function-key">y</span>
+					<span class="key function-key">z</span>
+					<span class="key function-key">a</span>
+					<span class="key function-key">b</span>
+					<span class="key function-key">c</span>
+					<span class="key function-key">l</span>
+					<span class="key function-key">m</span>
+					<span class="key function-key">n</span>
+					<span class="key function-key">u</span>
+					<span class="key function-key">v</span>
+					<span class="key function-key">w</span>
+				</div>
+				<span class="key folder">논리연산</span>
+				<div id="LogicOp" class="hideBtn">
+					<span class="key function-key paren">and</span>
+					<span class="key function-key paren">or</span>
+					<span class="key function-key paren">not</span>
+					<span class="key function-key paren">nor</span>
+					<span class="key function-key">true</span>
+					<span class="key function-key">false</span>
+				</div>
+				<span class="key folder">비트연산</span>
+				<div id="BitOp" class="hideBtn">
+					<span class="key function-key semi-operator">&</span>
+					<span class="key function-key semi-operator">|</span>
+					<span class="key function-key semi-operator">~</span>
+					<span class="key function-key semi-operator"><<</span>
+					<span class="key function-key semi-operator">>></span>
+				</div>
+				<span id='shift-off' class="key shift">SHIFT</span>
+				<span id='alpha-off' class="key alpha">ALPHA</span>
+				<span class="key">[</span>
+				<span class="key">]</span>
+				<span class="key">=</span>
+				<span id='1' class="key semi-operator">^</span>
+				<span id='2' class="key">◀◀</span>
+				<span id='3' class="key">▶▶</span>
+				<span class="key">(</span>
+				<span class="key">)</span>
+				<span class="key">,</span>
+				<span id='4' class="key">;</span>
+				<span id='5' class="key paren normal">sqrt</span>
+				<span id='6' class="key symbol-key">x</span>
+				<span class="key number">7</span>
+				<span class="key number">8</span>
+				<span class="key number">9</span>
+				<span id="delete-key" class="key">DEL</span>
+				<span id="clear-key" class="key">AC</span>
+				<span class="key number">4</span>
+				<span class="key number">5</span>
+				<span class="key number">6</span>
+				<span class="key operator">+</span>
+				<span class="key operator">-</span>
+				<span class="key number">1</span>
+				<span class="key number">2</span>
+				<span class="key number">3</span>
+				<span class="key operator">*</span>
+				<span class="key operator">%</span>
+				<span class="key operator">+/-</span>
+				<span class="key number">0</span>
+				<span class="key number">.</span>
+				<span class="key operator">/</span>
+				<span class="key eval-key">EXE</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
